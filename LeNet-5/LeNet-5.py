@@ -1,8 +1,11 @@
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense
+from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense, Dropout
 import matplotlib.pyplot as plt
+
+batch_size = 128
+epoch = 35
 
 # 데이터 불려오기
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
@@ -27,16 +30,18 @@ model.add(Conv2D(16, (5, 5), activation='relu'))
 model.add(MaxPool2D((2, 2), strides=(2, 2)))
 model.add(Conv2D(120, (5, 5), activation='relu'))
 model.add(Flatten())
+model.add(Dropout(0.5))
 model.add(Dense(84, activation='relu'))
+model.add(Dropout(0.5))
 model.add(Dense(10, activation='softmax'))
 model.summary()
 
 # 학습하기
 model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['accuracy'])
-history = model.fit(X_train, y_train, batch_size=32, epochs=30, validation_split=0.2)
+history = model.fit(X_train, y_train, batch_size=batch_size, epochs=epoch, validation_split=0.2)
 
 # 평가하기
-model.evaluate(X_test, y_test, batch_size=32)
+model.evaluate(X_test, y_test, batch_size=batch_size)
 
 # 결과 시각화하기
 fig = plt.figure(figsize=(10, 5))

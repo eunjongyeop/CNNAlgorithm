@@ -25,6 +25,9 @@
 
 
 ## 결과
+- 모델
+![summary1](img/summary.png)
+- 결과
 ![result1](img/result1.png)
 - train <br>
     loss: 0.0047  accuracy: 0.9986 
@@ -35,3 +38,14 @@
     
 overfitting현상이 나타난다.
 
+#### Dropout Layer 추가
+- 모델
+![summary2](img/summary2.png)
+- 결과
+![result2](img/result2.png)
+- train <br>
+    loss: 0.0306  accuracy: 0.9908 
+- val   <br>
+    loss: 0.0476  accuracy: 0.9895
+- test  <br>
+    loss: 0.0313  accuracy: 0.9917
