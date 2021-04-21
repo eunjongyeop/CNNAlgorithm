@@ -5,7 +5,7 @@ CNN 알고리즘들을 정리하는 저장소
 1. LeNet-5
 
 - 구현예정
-AlexNet
-VGGNet
-GoogLeNet
-ResNet
+AlexNet <br>
+VGGNet <br>
+GoogLeNet <br>
+ResNet <br>
