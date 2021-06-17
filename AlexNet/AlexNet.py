@@ -15,8 +15,8 @@ weight_decay = 0.05
 lr = 0.001
 epochs = 90
 
-width = 224
-height = 224
+width = 227
+height = 227
 n_classes = 1000
 # labels = {}
 
